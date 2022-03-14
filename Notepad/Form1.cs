@@ -56,6 +56,7 @@ namespace Notepad
                 sw.Write(textBox1.Text);
                 sw.Close();
                 MessageBox.Show("Saved successfully.\n" + saveFileDialog1.FileName, "Notepad - Almasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Text = saveFileDialog1.FileName;
             }
         }
 
@@ -77,6 +78,11 @@ namespace Notepad
                 savefile();
             }
 
+            if (e.Control && e.KeyCode == Keys.O)
+            {
+                loadfile();
+            }
+
             if (e.Alt && e.KeyCode == Keys.X)
             {
                 this.Close();
@@ -86,6 +92,43 @@ namespace Notepad
         private void aboutThisToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/AliAlmasi/Notepad");
+        }
+
+        private void loadfile()
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog
+            {
+                InitialDirectory = @"C:\",
+                Title = "Load a Text File",
+
+                CheckFileExists = true,
+                CheckPathExists = true,
+
+                DefaultExt = "txt",
+                Filter = "Text files (*.txt)|*.txt",
+                FilterIndex = 1,
+                RestoreDirectory = true,
+
+                ReadOnlyChecked = true,
+                ShowReadOnly = false
+            };
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string text;
+                var fileStream = new FileStream(openFileDialog1.FileName, FileMode.Open, FileAccess.Read);
+                using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
+                {
+                    text = streamReader.ReadToEnd();
+                    textBox1.Text = text;
+                    this.Text = openFileDialog1.FileName;
+                }
+            }
+        }
+
+        private void loadTXTFileCtrlOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            loadfile();
         }
     }
 }

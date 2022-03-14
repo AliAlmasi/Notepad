@@ -103,6 +103,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Notepad_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
@@ -117,6 +118,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\bd22db5697d828c3fb0562827e5a2676.png" />
+    <None Include="Resources\bd22db5697d828c3fb0562827e5a2676_2.png" />
+    <None Include="Resources\kisspng-font-awesome-computer-icons-editing-font-report-border-5ae0ba2530e032.2703211515246771572002.png" />
+    <None Include="Resources\5847f98fcef1014c0b5e48c0.png" />
+    <None Include="Resources\img_266983.png" />
+    <None Include="Resources\black-save-icon-2.png" />
+    <None Include="Resources\296-2969762_all-photo-png-clipart-open-file-icon-png.png" />
     <Content Include="TextTemplate.ico" />
   </ItemGroup>
   <ItemGroup>

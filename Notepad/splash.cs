@@ -17,8 +17,8 @@ namespace Notepad
 
         private void splash_Load(object sender, EventArgs e)
         {
-            this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.None;
             this.Size = BackgroundImage.Size;
         }
 

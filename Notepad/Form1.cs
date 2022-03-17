@@ -130,6 +130,54 @@ namespace Notepad
         {
             loadfile();
         }
+
+        private void Form1_DragOver(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effect = DragDropEffects.Link;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+
+        private void Form1_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] FileList = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            foreach (string File in FileList)
+            {
+                string droptext;
+                var fileStream = new FileStream(FileList[0], FileMode.Open, FileAccess.Read);
+                using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
+                {
+                    droptext = streamReader.ReadToEnd();
+                    textBox1.Text = droptext;
+                    this.Text = FileList[0];
+                }
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.WordWrap == true)
+            {
+                textBox1.ScrollBars = ScrollBars.Vertical;
+            }
+            else
+            {
+                textBox1.ScrollBars = ScrollBars.Both;
+            }
+        }
+
+        private void wordWrapToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        {
+            if (wordWrapToolStripMenuItem.Checked == true)
+            {
+                textBox1.WordWrap = true;
+            }
+            else
+            {
+                textBox1.WordWrap = false;
+            }
+        }
     }
 }
 

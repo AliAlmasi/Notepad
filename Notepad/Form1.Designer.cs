@@ -32,20 +32,21 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveTXTFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadTXTFileCtrlOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontChangaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontColorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroudColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wordWrapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutThisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.colorDialogfore = new System.Windows.Forms.ColorDialog();
             this.colorDialogback = new System.Windows.Forms.ColorDialog();
             this.fontDialog = new System.Windows.Forms.FontDialog();
-            this.saveTXTFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadTXTFileCtrlOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fontChangaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fontColorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.backgroudColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutThisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +62,8 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(560, 422);
             this.textBox1.TabIndex = 0;
+            this.textBox1.WordWrap = false;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // menuStrip1
             // 
@@ -86,51 +89,6 @@
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.saveToolStripMenuItem.Text = "&File";
             // 
-            // fontColorToolStripMenuItem
-            // 
-            this.fontColorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fontChangaToolStripMenuItem,
-            this.fontColorToolStripMenuItem1,
-            this.backgroudColorToolStripMenuItem});
-            this.fontColorToolStripMenuItem.Name = "fontColorToolStripMenuItem";
-            this.fontColorToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
-            this.fontColorToolStripMenuItem.Text = "&Settings";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutThisToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.quitToolStripMenuItem,
-            this.toolStripTextBox1});
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.aboutToolStripMenuItem.Text = "&About";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Pokémon DS Font", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripTextBox1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.toolStripTextBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.ReadOnly = true;
-            this.toolStripTextBox1.Size = new System.Drawing.Size(120, 24);
-            this.toolStripTextBox1.Text = "Ali Almasi - 2022";
-            this.toolStripTextBox1.ToolTipText = "Notepad - Redesigned by Ali Almasi 2022";
-            // 
-            // fontDialog
-            // 
-            this.fontDialog.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Italic);
-            this.fontDialog.FontMustExist = true;
-            this.fontDialog.MaxSize = 16;
-            this.fontDialog.MinSize = 9;
-            // 
             // saveTXTFileToolStripMenuItem
             // 
             this.saveTXTFileToolStripMenuItem.Image = global::Notepad.Properties.Resources.black_save_icon_2;
@@ -146,6 +104,17 @@
             this.loadTXTFileCtrlOToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
             this.loadTXTFileCtrlOToolStripMenuItem.Text = "&Load TXT file (Ctrl+O)";
             this.loadTXTFileCtrlOToolStripMenuItem.Click += new System.EventHandler(this.loadTXTFileCtrlOToolStripMenuItem_Click);
+            // 
+            // fontColorToolStripMenuItem
+            // 
+            this.fontColorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fontChangaToolStripMenuItem,
+            this.fontColorToolStripMenuItem1,
+            this.backgroudColorToolStripMenuItem,
+            this.wordWrapToolStripMenuItem});
+            this.fontColorToolStripMenuItem.Name = "fontColorToolStripMenuItem";
+            this.fontColorToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
+            this.fontColorToolStripMenuItem.Text = "&Settings";
             // 
             // fontChangaToolStripMenuItem
             // 
@@ -171,6 +140,25 @@
             this.backgroudColorToolStripMenuItem.Text = "Change &Backgroud Color";
             this.backgroudColorToolStripMenuItem.Click += new System.EventHandler(this.backgroudColorToolStripMenuItem_Click);
             // 
+            // wordWrapToolStripMenuItem
+            // 
+            this.wordWrapToolStripMenuItem.CheckOnClick = true;
+            this.wordWrapToolStripMenuItem.Name = "wordWrapToolStripMenuItem";
+            this.wordWrapToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.wordWrapToolStripMenuItem.Text = "&Word Wrap";
+            this.wordWrapToolStripMenuItem.CheckedChanged += new System.EventHandler(this.wordWrapToolStripMenuItem_CheckedChanged);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutThisToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.quitToolStripMenuItem,
+            this.toolStripTextBox1});
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.aboutToolStripMenuItem.Text = "&About";
+            // 
             // aboutThisToolStripMenuItem
             // 
             this.aboutThisToolStripMenuItem.Image = global::Notepad.Properties.Resources._5847f98fcef1014c0b5e48c0;
@@ -178,6 +166,11 @@
             this.aboutThisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutThisToolStripMenuItem.Text = "&Github";
             this.aboutThisToolStripMenuItem.Click += new System.EventHandler(this.aboutThisToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // quitToolStripMenuItem
             // 
@@ -187,8 +180,28 @@
             this.quitToolStripMenuItem.Text = "&Quit (Alt+X)";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Pokémon DS Font", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.toolStripTextBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.ReadOnly = true;
+            this.toolStripTextBox1.Size = new System.Drawing.Size(120, 24);
+            this.toolStripTextBox1.Text = "Ali Almasi - 2022";
+            this.toolStripTextBox1.ToolTipText = "Notepad - Redesigned by Ali Almasi 2022";
+            // 
+            // fontDialog
+            // 
+            this.fontDialog.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Italic);
+            this.fontDialog.FontMustExist = true;
+            this.fontDialog.MaxSize = 16;
+            this.fontDialog.MinSize = 9;
+            // 
             // Form1
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -198,9 +211,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(300, 200);
             this.Name = "Form1";
             this.Text = "Notepad - Almasi";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
+            this.DragOver += new System.Windows.Forms.DragEventHandler(this.Form1_DragOver);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -228,6 +244,7 @@
         private System.Windows.Forms.FontDialog fontDialog;
         private System.Windows.Forms.ToolStripMenuItem loadTXTFileCtrlOToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripMenuItem wordWrapToolStripMenuItem;
     }
 }
 

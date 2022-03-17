@@ -23,7 +23,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.1.0.0</ApplicationVersion>
+    <ApplicationVersion>1.2.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -63,9 +63,7 @@
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
@@ -75,6 +73,9 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -90,6 +91,15 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="splash.resx">
+      <DependentUpon>splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="splash.Designer.cs">
+      <DependentUpon>splash.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,6 +136,7 @@
     <None Include="Resources\img_266983.png" />
     <None Include="Resources\black-save-icon-2.png" />
     <None Include="Resources\296-2969762_all-photo-png-clipart-open-file-icon-png.png" />
+    <None Include="Resources\Untitled.png" />
     <Content Include="TextTemplate.ico" />
   </ItemGroup>
   <ItemGroup>

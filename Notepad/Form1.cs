@@ -6,14 +6,28 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace Notepad
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        string[] _args;
+        public Form1(string[] args)
         {
             InitializeComponent();
+            _args = args;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            if (_args.Length > 0)
+            {
+                if (File.Exists(_args[0]))
+                {
+                    textBox1.Text = File.ReadAllText(_args[0]);
+                }
+            }
         }
 
         private void fontColorToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -30,7 +44,8 @@ namespace Notepad
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Are You Sure?", "Notepad - Almasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
+            if (MessageBox.Show("Are you sure to quit?", "Notepad - Almasi",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
                 e.Cancel = true;
         }
 
@@ -155,28 +170,23 @@ namespace Notepad
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (textBox1.WordWrap == true)
-            {
-                textBox1.ScrollBars = ScrollBars.Vertical;
-            }
-            else
-            {
-                textBox1.ScrollBars = ScrollBars.Both;
-            }
-        }
-
         private void wordWrapToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
         {
             if (wordWrapToolStripMenuItem.Checked == true)
             {
                 textBox1.WordWrap = true;
+                textBox1.ScrollBars = ScrollBars.Vertical;
             }
             else
             {
                 textBox1.WordWrap = false;
+                textBox1.ScrollBars = ScrollBars.Both;
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            textBox1.ScrollBars = ScrollBars.Both;
         }
     }
 }

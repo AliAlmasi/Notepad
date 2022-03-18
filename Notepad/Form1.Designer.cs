@@ -36,9 +36,9 @@
             this.loadTXTFileCtrlOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontChangaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fontColorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroudColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wordWrapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.darkModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutThisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -56,7 +56,8 @@
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(12, 27);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -67,7 +68,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip1.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripMenuItem,
@@ -107,11 +108,12 @@
             // 
             // fontColorToolStripMenuItem
             // 
+            this.fontColorToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.fontColorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fontChangaToolStripMenuItem,
-            this.fontColorToolStripMenuItem1,
             this.backgroudColorToolStripMenuItem,
-            this.wordWrapToolStripMenuItem});
+            this.wordWrapToolStripMenuItem,
+            this.darkModeToolStripMenuItem});
             this.fontColorToolStripMenuItem.Name = "fontColorToolStripMenuItem";
             this.fontColorToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.fontColorToolStripMenuItem.Text = "&Settings";
@@ -123,14 +125,6 @@
             this.fontChangaToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
             this.fontChangaToolStripMenuItem.Text = "Change &Font";
             this.fontChangaToolStripMenuItem.Click += new System.EventHandler(this.fontChangaToolStripMenuItem_Click);
-            // 
-            // fontColorToolStripMenuItem1
-            // 
-            this.fontColorToolStripMenuItem1.Image = global::Notepad.Properties.Resources.bd22db5697d828c3fb0562827e5a2676_2;
-            this.fontColorToolStripMenuItem1.Name = "fontColorToolStripMenuItem1";
-            this.fontColorToolStripMenuItem1.Size = new System.Drawing.Size(250, 22);
-            this.fontColorToolStripMenuItem1.Text = "Change Font &Color";
-            this.fontColorToolStripMenuItem1.Click += new System.EventHandler(this.fontColorToolStripMenuItem1_Click);
             // 
             // backgroudColorToolStripMenuItem
             // 
@@ -147,6 +141,14 @@
             this.wordWrapToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
             this.wordWrapToolStripMenuItem.Text = "&Word Wrap";
             this.wordWrapToolStripMenuItem.CheckedChanged += new System.EventHandler(this.wordWrapToolStripMenuItem_CheckedChanged);
+            // 
+            // darkModeToolStripMenuItem
+            // 
+            this.darkModeToolStripMenuItem.CheckOnClick = true;
+            this.darkModeToolStripMenuItem.Name = "darkModeToolStripMenuItem";
+            this.darkModeToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.darkModeToolStripMenuItem.Text = "&Dark Mode";
+            this.darkModeToolStripMenuItem.Click += new System.EventHandler(this.darkModeToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -194,10 +196,14 @@
             // 
             // fontDialog
             // 
-            this.fontDialog.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Italic);
+            this.fontDialog.AllowVectorFonts = false;
+            this.fontDialog.AllowVerticalFonts = false;
+            this.fontDialog.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fontDialog.FontMustExist = true;
-            this.fontDialog.MaxSize = 16;
+            this.fontDialog.MaxSize = 18;
             this.fontDialog.MinSize = 9;
+            this.fontDialog.ShowApply = true;
+            this.fontDialog.ShowColor = true;
             // 
             // Form1
             // 
@@ -234,7 +240,6 @@
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveTXTFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fontColorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fontColorToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem backgroudColorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutThisToolStripMenuItem;
@@ -247,6 +252,7 @@
         private System.Windows.Forms.ToolStripMenuItem loadTXTFileCtrlOToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripMenuItem wordWrapToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem darkModeToolStripMenuItem;
     }
 }
 

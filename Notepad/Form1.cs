@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using Microsoft.Win32;
 
+#pragma warning disable IDE1006 // Naming Styles
+
 namespace Notepad
 {
     public partial class Form1 : Form
@@ -30,12 +32,6 @@ namespace Notepad
             }
         }
 
-        private void fontColorToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            colorDialogfore.ShowDialog();
-            textBox1.ForeColor = colorDialogfore.Color;
-        }
-
         private void backgroudColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             colorDialogback.ShowDialog();
@@ -56,15 +52,18 @@ namespace Notepad
 
         private void savefile()
         {
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.InitialDirectory = @"C:\";
-            saveFileDialog1.Title = "Save text Files";
-            saveFileDialog1.CheckFileExists = false;
-            saveFileDialog1.CheckPathExists = true;
-            saveFileDialog1.DefaultExt = "txt";
-            saveFileDialog1.Filter = "Text files (*.txt)|*.txt";
-            saveFileDialog1.FilterIndex = 1;
-            saveFileDialog1.RestoreDirectory = true;
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog
+            {
+                InitialDirectory = @"C:\",
+                Title = "Save text Files",
+                CheckFileExists = false,
+                CheckPathExists = true,
+                DefaultExt = "txt",
+                Filter = "Text files (*.txt)|*.txt",
+                FilterIndex = 1,
+                RestoreDirectory = true
+            };
+
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter sw = new StreamWriter(saveFileDialog1.FileName);
@@ -84,6 +83,7 @@ namespace Notepad
         {
             fontDialog.ShowDialog();
             textBox1.Font = fontDialog.Font;
+            textBox1.ForeColor = fontDialog.Color;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -106,7 +106,7 @@ namespace Notepad
 
         private void aboutThisToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/AliAlmasi/Notepad");
+            System.Diagnostics.Process.Start("https://github.com/AliAlmasi/Notepad/releases/latest");
         }
 
         private void loadfile()
@@ -187,6 +187,35 @@ namespace Notepad
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             textBox1.ScrollBars = ScrollBars.Both;
+        }
+
+        private void darkMode()
+        {
+            this.BackColor = SystemColors.ControlDarkDark;
+            menuStrip1.ForeColor = SystemColors.Control;
+            textBox1.BackColor = Color.FromArgb(53, 53, 53);
+            textBox1.ForeColor = Color.White;
+        }
+
+        private void lightMode()
+        {
+            // default color is ControlLight
+            this.BackColor = SystemColors.ControlLight;
+            menuStrip1.ForeColor = Color.Black;
+            textBox1.BackColor = SystemColors.Control;
+            textBox1.ForeColor = SystemColors.WindowText;
+        }
+
+        private void darkModeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (darkModeToolStripMenuItem.Checked == true)
+            {
+                darkMode();
+            }
+            else
+            {
+                lightMode();
+            }
         }
     }
 }

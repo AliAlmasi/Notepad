@@ -48,10 +48,11 @@
             this.colorDialogback = new System.Windows.Forms.ColorDialog();
             this.fontDialog = new System.Windows.Forms.FontDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -162,6 +163,7 @@
             this.aboutThisToolStripMenuItem,
             this.toolStripSeparator1,
             this.quitToolStripMenuItem,
+            this.toolStripTextBox2,
             this.toolStripTextBox1});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
@@ -225,6 +227,19 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip2";
             // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(39, 17);
+            this.toolStripStatusLabel3.Text = "    ";
+            // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(15, 17);
+            this.toolStripStatusLabel4.Text = " ";
+            this.toolStripStatusLabel4.Visible = false;
+            // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
@@ -238,18 +253,18 @@
             this.toolStripStatusLabel1.Text = "Word Wrap";
             this.toolStripStatusLabel1.Visible = false;
             // 
-            // toolStripStatusLabel3
+            // toolStripTextBox2
             // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(39, 17);
-            this.toolStripStatusLabel3.Text = "    ";
-            // 
-            // toolStripStatusLabel4
-            // 
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(15, 17);
-            this.toolStripStatusLabel4.Text = " ";
-            this.toolStripStatusLabel4.Visible = false;
+            this.toolStripTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.toolStripTextBox2.Font = new System.Drawing.Font("Pokémon DS Font", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.toolStripTextBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripTextBox2.Name = "toolStripTextBox2";
+            this.toolStripTextBox2.ReadOnly = true;
+            this.toolStripTextBox2.Size = new System.Drawing.Size(120, 24);
+            this.toolStripTextBox2.Text = "Version 1.3.0";
+            this.toolStripTextBox2.ToolTipText = "Click to check for latest version";
+            this.toolStripTextBox2.Click += new System.EventHandler(this.toolStripTextBox2_Click);
             // 
             // Form1
             // 
@@ -307,6 +322,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
     }
 }
 

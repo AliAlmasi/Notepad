@@ -229,6 +229,11 @@ namespace Notepad
                 lightMode();
             }
         }
+
+        private void toolStripTextBox2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/AliAlmasi/Notepad/releases/latest");
+        }
     }
 }
 

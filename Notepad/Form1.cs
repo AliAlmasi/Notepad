@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using Microsoft.Win32;
 
 #pragma warning disable IDE1006 // Naming Styles
 
@@ -19,6 +15,8 @@ namespace Notepad
         {
             InitializeComponent();
             _args = args;
+            darkMode();
+            darkModeToolStripMenuItem.Checked = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -176,17 +174,27 @@ namespace Notepad
             {
                 textBox1.WordWrap = true;
                 textBox1.ScrollBars = ScrollBars.Vertical;
+                toolStripStatusLabel1.Visible = true;
             }
             else
             {
                 textBox1.WordWrap = false;
                 textBox1.ScrollBars = ScrollBars.Both;
+                toolStripStatusLabel1.Visible = false;
             }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             textBox1.ScrollBars = ScrollBars.Both;
+
+            toolStripStatusLabel4.Visible = true;
+            toolStripStatusLabel4.Text = textBox1.TextLength.ToString();
+
+            if (toolStripStatusLabel4.Text == 0.ToString())
+            {
+                toolStripStatusLabel4.Visible = false;
+            }
         }
 
         private void darkMode()
@@ -195,6 +203,8 @@ namespace Notepad
             menuStrip1.ForeColor = SystemColors.Control;
             textBox1.BackColor = Color.FromArgb(53, 53, 53);
             textBox1.ForeColor = Color.White;
+            statusStrip1.BackColor = Color.FromArgb(63, 63, 63);
+            statusStrip1.ForeColor = SystemColors.Control;
         }
 
         private void lightMode()
@@ -204,6 +214,8 @@ namespace Notepad
             menuStrip1.ForeColor = Color.Black;
             textBox1.BackColor = SystemColors.Control;
             textBox1.ForeColor = SystemColors.WindowText;
+            statusStrip1.BackColor = SystemColors.Control;
+            statusStrip1.ForeColor = Color.Black;
         }
 
         private void darkModeToolStripMenuItem_Click(object sender, EventArgs e)

@@ -19,7 +19,7 @@ namespace Notepad.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -63,9 +63,9 @@ namespace Notepad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _296_2969762_all_photo_png_clipart_open_file_icon_png {
+        internal static System.Drawing.Bitmap arrowsRefresh {
             get {
-                object obj = ResourceManager.GetObject("296-2969762_all-photo-png-clipart-open-file-icon-png", resourceCulture);
+                object obj = ResourceManager.GetObject("arrowsRefresh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Notepad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _5847f98fcef1014c0b5e48c0 {
+        internal static System.Drawing.Bitmap changebgcolor {
             get {
-                object obj = ResourceManager.GetObject("5847f98fcef1014c0b5e48c0", resourceCulture);
+                object obj = ResourceManager.GetObject("changebgcolor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Notepad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bd22db5697d828c3fb0562827e5a2676 {
+        internal static System.Drawing.Bitmap dark {
             get {
-                object obj = ResourceManager.GetObject("bd22db5697d828c3fb0562827e5a2676", resourceCulture);
+                object obj = ResourceManager.GetObject("dark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace Notepad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bd22db5697d828c3fb0562827e5a2676_2 {
+        internal static System.Drawing.Bitmap font {
             get {
-                object obj = ResourceManager.GetObject("bd22db5697d828c3fb0562827e5a2676_2", resourceCulture);
+                object obj = ResourceManager.GetObject("font", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace Notepad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap black_save_icon_2 {
+        internal static System.Drawing.Bitmap icons8_word_wrap_100 {
             get {
-                object obj = ResourceManager.GetObject("black-save-icon-2", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_word_wrap_100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,10 +123,19 @@ namespace Notepad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap kisspng_font_awesome_computer_icons_editing_font_report_border_5ae0ba2530e032_2703211515246771572002 {
+        internal static System.Drawing.Bitmap open {
             get {
-                object obj = ResourceManager.GetObject("kisspng-font-awesome-computer-icons-editing-font-report-border-5ae0ba2530e032.270" +
-                        "3211515246771572002", resourceCulture);
+                object obj = ResourceManager.GetObject("open", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save {
+            get {
+                object obj = ResourceManager.GetObject("save", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -137,6 +146,16 @@ namespace Notepad.Properties {
         internal static System.Drawing.Bitmap Untitled {
             get {
                 object obj = ResourceManager.GetObject("Untitled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user {
+            get {
+                object obj = ResourceManager.GetObject("user", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -20,11 +20,11 @@ namespace Notepad
             this.StartPosition = FormStartPosition.CenterScreen;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Size = BackgroundImage.Size;
+            timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Start();
             this.Close();
         }
     }
